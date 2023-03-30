@@ -36,10 +36,10 @@ kramdown:
     coderay_css:               style
 
 src:
-  xtext_lib: "https://github.com/eclipse/xtext-lib/blob/master"
+  xtext: "https://github.com/eclipse/xtext/tree/main"
 
 javadoc:
-  java: "http://docs.oracle.com/javase/8/docs/api"
+  java: "http://docs.oracle.com/javase/11/docs/api"
   guava: "https://guava.dev/releases/30.1-jre/api/docs/"
 
-edit-repo : "https://github.com/eclipse/xtext/edit/website-published/xtend-website/"
+edit-repo : "https://github.com/eclipse/xtext-website/tree/main/xtend-website/"

@@ -32,7 +32,7 @@ public class HasAuthor {
 
 First of all, locate the file *DomainmodelGenerator.xtend* in the package *org.example.domainmodel.generator*. This Xtend class is used to generate code for your models in the standalone scenario and in the interactive Eclipse environment. Let's make the implementation more meaningful and start writing the code generator. The strategy is to find all entities within a resource and trigger code generation for each one.
 
-1.  First of all, you will have to filter the contents of the resource down to the defined entities. Therefore we need to iterate a resource with all its deeply nested elements. This can be achieved with the method `getAllContents()`. To use the resulting [TreeIterator]({{site.src.emf}}/plugins/org.eclipse.emf.common/src/org/eclipse/emf/common/util/TreeIterator.java) in a `for` loop, we use the extension method `toIterable()` from the built-in library class [IteratorExtensions]({{site.src.xtext_lib}}/org.eclipse.xtext.xbase.lib/src/org/eclipse/xtext/xbase/lib/IteratorExtensions.java).
+1.  First of all, you will have to filter the contents of the resource down to the defined entities. Therefore we need to iterate a resource with all its deeply nested elements. This can be achieved with the method `getAllContents()`. To use the resulting [TreeIterator]({{site.src.emf}}/plugins/org.eclipse.emf.common/src/org/eclipse/emf/common/util/TreeIterator.java) in a `for` loop, we use the extension method `toIterable()` from the built-in library class [IteratorExtensions]({{site.src.xtext}}/org.eclipse.xtext.xbase.lib/src/org/eclipse/xtext/xbase/lib/IteratorExtensions.java).
 
     ```xtend
     class DomainmodelGenerator extends AbstractGenerator {
@@ -45,7 +45,7 @@ First of all, locate the file *DomainmodelGenerator.xtend* in the package *org.e
     }
     ```
 
-1.  Now let's answer the question how we determine the file name of the Java class that each *Entity* should yield. This information should be derived from the qualified name of the *Entity* since Java enforces this pattern. The qualified name itself has to be obtained from a special service that is available for each language. Fortunately, Xtend allows to reuse that one easily. We simply inject the [IQualifiedNameProvider]({{site.src.xtext_core}}/org.eclipse.xtext/src/org/eclipse/xtext/naming/IQualifiedNameProvider.java) as a field into the generator.
+1.  Now let's answer the question how we determine the file name of the Java class that each *Entity* should yield. This information should be derived from the qualified name of the *Entity* since Java enforces this pattern. The qualified name itself has to be obtained from a special service that is available for each language. Fortunately, Xtend allows to reuse that one easily. We simply inject the [IQualifiedNameProvider]({{site.src.xtext}}/org.eclipse.xtext/src/org/eclipse/xtext/naming/IQualifiedNameProvider.java) as a field into the generator.
 
     ```xtend
       @Inject extension IQualifiedNameProvider
@@ -208,7 +208,7 @@ public void checkNameStartsWithCapital(Entity entity) {
 }
 ```
 
-Any name for the method will do. The important thing is the [Check]({{site.src.xtext_core}}/org.eclipse.xtext/src/org/eclipse/xtext/validation/Check.java) annotation that advises the Xtext framework to use the method as a validation rule. If the name starts with a lower case letter, a warning will be attached to the name of the *Entity*.
+Any name for the method will do. The important thing is the [Check]({{site.src.xtext}}/org.eclipse.xtext/src/org/eclipse/xtext/validation/Check.java) annotation that advises the Xtext framework to use the method as a validation rule. If the name starts with a lower case letter, a warning will be attached to the name of the *Entity*.
 
 The second validation rule is straight-forward, too. We traverse the inheritance hierarchy of the *Entity* and look for features with equal names.
 
@@ -230,7 +230,7 @@ public void checkFeatureNameIsUnique(Feature feature) {
 
 The sibling features that are defined in the same entity are automatically validated by the Xtext framework, thus they do not have to be checked twice. Note that this implementation is not optimal in terms of execution time because the iteration over the features is done for all features of each entity.
 
-You can determine when the `@Check`-annotated methods will be executed with the help of the [CheckType]({{site.src.xtext_core}}/org.eclipse.xtext/src/org/eclipse/xtext/validation/CheckType.java) enum. The default value is `FAST`, i.e. the checks will be executed on editing, saving/building or on request; also available are `NORMAL` (executed on build/save or on request) and `EXPENSIVE` (executed only on request).
+You can determine when the `@Check`-annotated methods will be executed with the help of the [CheckType]({{site.src.xtext}}/org.eclipse.xtext/src/org/eclipse/xtext/validation/CheckType.java) enum. The default value is `FAST`, i.e. the checks will be executed on editing, saving/building or on request; also available are `NORMAL` (executed on build/save or on request) and `EXPENSIVE` (executed only on request).
 
 ```java
 @Check(CheckType.NORMAL)
@@ -245,7 +245,7 @@ Automated tests are crucial for the maintainability and the quality of a softwar
 
 This tutorial is about testing the parser, the linker, the validator and the generator of the *Domainmodel* language. It leverages Xtend to write the test cases.
 
-1. The core of the test infrastructure is the [XtextRunner]({{site.src.xtext_core}}/org.eclipse.xtext.testing/src/org/eclipse/xtext/testing/XtextRunner.java) (for JUnit 4) and the language-specific [IInjectorProvider]({{site.src.xtext_core}}/org.eclipse.xtext.testing/src/org/eclipse/xtext/testing/IInjectorProvider.java). Both have to be provided by means of class annotations. An example test class should have already been generated by the Xtext code generator, named *org.example.domainmodel.tests.DomainmodelParsingTest*:
+1. The core of the test infrastructure is the [XtextRunner]({{site.src.xtext}}/org.eclipse.xtext.testing/src/org/eclipse/xtext/testing/XtextRunner.java) (for JUnit 4) and the language-specific [IInjectorProvider]({{site.src.xtext}}/org.eclipse.xtext.testing/src/org/eclipse/xtext/testing/IInjectorProvider.java). Both have to be provided by means of class annotations. An example test class should have already been generated by the Xtext code generator, named *org.example.domainmodel.tests.DomainmodelParsingTest*:
     
     ```xtend
     @RunWith(XtextRunner)
@@ -268,9 +268,9 @@ This tutorial is about testing the parser, the linker, the validator and the gen
     }
     ```
 
-    *Note*: When using JUnit 5 the [InjectionExtension]({{site.src.xtext_core}}/org.eclipse.xtext.testing/src/org/eclipse/xtext/testing/extensions/InjectionExtension.java) is used instead of the XtextRunner. The Xtext code generator generates the example slightly different, depending on which option you have chosen in the *New Xtext Project* wizard.
+    *Note*: When using JUnit 5 the [InjectionExtension]({{site.src.xtext}}/org.eclipse.xtext.testing/src/org/eclipse/xtext/testing/extensions/InjectionExtension.java) is used instead of the XtextRunner. The Xtext code generator generates the example slightly different, depending on which option you have chosen in the *New Xtext Project* wizard.
 
-1. The utility class [ParseHelper]({{site.src.xtext_core}}/org.eclipse.xtext.testing/src/org/eclipse/xtext/testing/util/ParseHelper.java) allows to parse an arbitrary string into a *Domainmodel*. The model itself can be traversed and checked afterwards. A static import of [Assert]({{site.javadoc.junit}}/org/junit/Assert.html) leads to concise and readable test cases. You can rewrite the generated test case as follows:
+1. The utility class [ParseHelper]({{site.src.xtext}}/org.eclipse.xtext.testing/src/org/eclipse/xtext/testing/util/ParseHelper.java) allows to parse an arbitrary string into a *Domainmodel*. The model itself can be traversed and checked afterwards. A static import of [Assert]({{site.javadoc.junit}}/org/junit/Assert.html) leads to concise and readable test cases. You can rewrite the generated test case as follows:
     
     ```xtend
     import static org.junit.Assert.*
@@ -287,7 +287,7 @@ This tutorial is about testing the parser, the linker, the validator and the gen
             assertSame(entity, entity.features.head.type)
         }
     ```
-2. In addition, the utility class [ValidationTestHelper]({{site.src.xtext_core}}/org.eclipse.xtext.testing/src/org/eclipse/xtext/testing/validation/ValidationTestHelper.java) allows to test the custom validation rules written for the language. Both valid and invalid models can be tested.
+2. In addition, the utility class [ValidationTestHelper]({{site.src.xtext}}/org.eclipse.xtext.testing/src/org/eclipse/xtext/testing/validation/ValidationTestHelper.java) allows to test the custom validation rules written for the language. Both valid and invalid models can be tested.
 
     ```xtend
     @Inject ParseHelper<Domainmodel> parseHelper
@@ -343,7 +343,7 @@ This tutorial is about testing the parser, the linker, the validator and the gen
     }
     ```
 
-3. The [CompilationTestHelper]({{site.src.xtext_extras}}/org.eclipse.xtext.xbase.testing/src/org/eclipse/xtext/xbase/testing/CompilationTestHelper.java) utility class comes in handy while unit testing the custom generators:
+3. The [CompilationTestHelper]({{site.src.xtext}}/org.eclipse.xtext.xbase.testing/src/org/eclipse/xtext/xbase/testing/CompilationTestHelper.java) utility class comes in handy while unit testing the custom generators:
 
 	```xtend
 	@Inject extension CompilationTestHelper
