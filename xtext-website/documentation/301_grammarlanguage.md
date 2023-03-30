@@ -6,7 +6,7 @@ part: Reference Documentation
 
 # {{page.title}} {#grammarLanguage}
 
-The [grammar language]({{site.src.xtext_core}}/org.eclipse.xtext/src/org/eclipse/xtext/Xtext.xtext) is the corner stone of Xtext. It is a domain-specific language, carefully designed for the description of textual languages. The main idea is to describe the concrete syntax and how it is mapped to an in-memory representation &ndash; the semantic model. This model will be created by the parser on-the-fly when it consumes an input file. Of course the Xtext grammar language itself is implemented with Xtext, so you will find parts of its syntax described with its own means in this documentation.
+The [grammar language]({{site.src.xtext}}/org.eclipse.xtext/src/org/eclipse/xtext/Xtext.xtext) is the corner stone of Xtext. It is a domain-specific language, carefully designed for the description of textual languages. The main idea is to describe the concrete syntax and how it is mapped to an in-memory representation &ndash; the semantic model. This model will be created by the parser on-the-fly when it consumes an input file. Of course the Xtext grammar language itself is implemented with Xtext, so you will find parts of its syntax described with its own means in this documentation.
 
 An example grammar is shown in the [15 Minutes Tutorial](102_domainmodelwalkthrough.html#write-your-own-grammar).
 
@@ -113,7 +113,7 @@ terminal INT returns ecore::EInt:
     ('0'..'9')+;
 ```
 
-This means that the terminal rule *INT* returns instances of `ecore::EInt`. It is possible to define any kind of data type here, which just needs to be an instance of `ecore::EDataType`. In order to tell the framework how to convert the parsed string to a value of the declared data type, you need to provide your own implementation of the [IValueConverterService]({{site.src.xtext_core}}/org.eclipse.xtext/src/org/eclipse/xtext/conversion/IValueConverterService.java) (see [Value Converter](303_runtime_concepts.html#value-converter)). The value converter is also the service that allows to remove escape sequences or semantically unnecessary characters such as quotes from string literals or the caret symbol `'^'` from the identifiers.
+This means that the terminal rule *INT* returns instances of `ecore::EInt`. It is possible to define any kind of data type here, which just needs to be an instance of `ecore::EDataType`. In order to tell the framework how to convert the parsed string to a value of the declared data type, you need to provide your own implementation of the [IValueConverterService]({{site.src.xtext}}/org.eclipse.xtext/src/org/eclipse/xtext/conversion/IValueConverterService.java) (see [Value Converter](303_runtime_concepts.html#value-converter)). The value converter is also the service that allows to remove escape sequences or semantically unnecessary characters such as quotes from string literals or the caret symbol `'^'` from the identifiers.
 
 #### Extended Backus-Naur Form Expressions
 
@@ -607,7 +607,7 @@ Language evolution is an important part of building serious DSLs. Adding somethi
 This will generate validations and the possibility to change the severity through preferences. As a default users will get a warning when using these rules. Of course it's up to you to decide what the severity should be - this opens the possibility to safely remove parts of the grammar by informing in advance with a warning and raise the severity to error afterwards.
 
 #### Exported
-As a default all elements that have a name that are exposed through the index to be referenced from outside. As a start this might fit your needs, but sooner or later you might run out of memory (big index) or you simply want to hide elements from the outside world. To do that you can write a custom version of the [IDefaultResourceDescriptionStrategy]({{site.src.xtext_core}}/org.eclipse.xtext/src/org/eclipse/xtext/resource/IDefaultResourceDescriptionStrategy.java) or simply use the `@Exported` annotation. This will generate a custom strategy as soon as there is at least one `@Exported` annotation in your grammar.
+As a default all elements that have a name that are exposed through the index to be referenced from outside. As a start this might fit your needs, but sooner or later you might run out of memory (big index) or you simply want to hide elements from the outside world. To do that you can write a custom version of the [IDefaultResourceDescriptionStrategy]({{site.src.xtext}}/org.eclipse.xtext/src/org/eclipse/xtext/resource/IDefaultResourceDescriptionStrategy.java) or simply use the `@Exported` annotation. This will generate a custom strategy as soon as there is at least one `@Exported` annotation in your grammar.
 
 ---
 
