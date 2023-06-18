@@ -50,12 +50,12 @@ spec:
               git clone -b master git@github.com:eclipse/xtext-website-publish.git deploy-xtext-git-repo
             '''
           }
-          sshagent(['git.eclipse.org-bot-ssh']) { // 
-            sh '''
-              rm -rf deploy-xtend-git-repo
-              git clone -b master ssh://genie.xtext@git.eclipse.org:29418/www.eclipse.org/xtend deploy-xtend-git-repo
-            '''
-          }
+          // sshagent(['git.eclipse.org-bot-ssh']) { // 
+          //   sh '''
+          //     rm -rf deploy-xtend-git-repo
+          //     git clone -b master ssh://genie.xtext@git.eclipse.org:29418/www.eclipse.org/xtend deploy-xtend-git-repo
+          //   '''
+          // }
       }
     }
     stage('Generate site') {
@@ -71,7 +71,7 @@ spec:
         dir ('git-repo/xtend-website') {
           sh '''
             # generate things in _site
-            bundle exec jekyll build
+            bundle exec jekyll build --destination ../xtext-website/_site/xtend
           '''
         }
         }
@@ -89,16 +89,16 @@ spec:
             git status
           '''
         }
-        dir ('deploy-xtend-git-repo') {
-          sh '''
-            git config user.name "genie-xtext"
-            git config user.email "xtext-bot@eclipse.org"
-            cp -r $WORKSPACE/git-repo/xtend-website/_site/* .
-            git diff
-            git add --all :/ && git commit -m "Generated from commit: https://github.com/eclipse/xtext/commit/$GIT_COMMIT"
-            git status
-          '''
-        }
+        // dir ('deploy-xtend-git-repo') {
+        //   sh '''
+        //     git config user.name "genie-xtext"
+        //     git config user.email "xtext-bot@eclipse.org"
+        //     cp -r $WORKSPACE/git-repo/xtend-website/_site/* .
+        //     git diff
+        //     git add --all :/ && git commit -m "Generated from commit: https://github.com/eclipse/xtext/commit/$GIT_COMMIT"
+        //     git status
+        //   '''
+        // }
       }
     }
     stage('Deploy') {
@@ -111,13 +111,13 @@ spec:
             '''
           }
         }
-        dir ('deploy-xtend-git-repo') {
-          sshagent(['git.eclipse.org-bot-ssh']) { // 
-            sh '''
-              git push origin master
-            '''
-          }
-        }
+        // dir ('deploy-xtend-git-repo') {
+        //   sshagent(['git.eclipse.org-bot-ssh']) { // 
+        //     sh '''
+        //       git push origin master
+        //     '''
+        //   }
+        // }
       }
     }
   }
