@@ -7,7 +7,7 @@ description: > # this means to ignore newlines until "baseurl:"
   top-notch Eclipse IDE integration. It comes with great defaults for all these aspects which at the same time can 
   be easily tailored to your individual needs.
 baseurl: "/Xtext" # the subpath of your site, e.g. /blog/
-url: "http://xtext.org" # the base hostname & protocol for your site
+url: "https://eclipse.dev" # the base hostname & protocol for your site
 twitter_username: xtext
 github_username:  xtext-dev
 encoding: UTF-8
@@ -41,11 +41,11 @@ src:
   emf: "https://git.eclipse.org/r/plugins/gitiles/emf/org.eclipse.emf/+/refs/tags/R2_20_0"
 
 javadoc:
-  eclipse-platform: "http://help.eclipse.org/luna/topic/org.eclipse.platform.doc.isv/reference/api"
-  eclipse-jdt: "http://help.eclipse.org/luna/topic/org.eclipse.jdt.doc.isv/reference/api"
-  java: "http://docs.oracle.com/javase/8/docs/api"
+  eclipse-platform: "https://help.eclipse.org/luna/topic/org.eclipse.platform.doc.isv/reference/api"
+  eclipse-jdt: "https://help.eclipse.org/luna/topic/org.eclipse.jdt.doc.isv/reference/api"
+  java: "https://docs.oracle.com/javase/8/docs/api"
   javaee: "https://docs.oracle.com/javaee/7/api"
-  junit: "http://junit.sourceforge.net/javadoc"
+  junit: "https://junit.sourceforge.net/javadoc"
   guice: "https://google.github.io/guice/api-docs/latest/javadoc"
 
 edit-repo : "https://github.com/eclipse/xtext-website/edit/published/xtext-website/"
