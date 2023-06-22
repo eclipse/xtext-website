@@ -21,7 +21,7 @@ Using the JVM types model is very simple. First of all, the grammar has to impor
 ```xtext
 grammar org.xtext.example.mydsl.MyDsl with org.eclipse.xtext.xbase.Xtype
 ...
-import "https://www.eclipse.org/xtext/common/JavaVMTypes" as jvmTypes
+import "http://www.eclipse.org/xtext/common/JavaVMTypes" as jvmTypes
 ```
 
 The next step is to actually refer to an imported concept. Let's define a mapping to available Java types for the simple data types in the domain model language. This can be done with a simple cross-reference:
@@ -68,7 +68,7 @@ Because we can express all kinds of Java type references directly now, an indire
 grammar org.eclipse.xtext.example.Domainmodel with
                                       org.eclipse.xtext.xbase.Xbase
 
-generate domainmodel "https://www.eclipse.org/xtext/example/Domainmodel"
+generate domainmodel "http://www.eclipse.org/xtext/example/Domainmodel"
 
 Domainmodel:
   importSection=XImportSection?
@@ -244,7 +244,7 @@ grammar org.xtext.example.mydsl.MyDsl with org.eclipse.xtext.xbase.Xbase
 If you want to refer to [EClassifiers]({{site.src.emf}}/plugins/org.eclipse.emf.ecore/src/org/eclipse/emf/ecore/EClassifier.java) from the Xbase model, you need to import Xbase first:
 
 ```xtext
-import "https://www.eclipse.org/xtext/xbase/Xbase" as xbase
+import "http://www.eclipse.org/xtext/xbase/Xbase" as xbase
 ```
 
 Now identify the location in your grammar where you want references to Java types and Xbase expressions to appear and call the appropriate rules of the super grammar. Adding Xbase expression to the domainmodel example leads to the additional concept *Operation*: An *Operation*'s parameters are *FullJvmFormalParameters*. The production rule for *FullJvmFormalParameters* expects both the name and the type here. That is reasonable since the type of parameters should not be inferred. The operation's return type is a *JvmTypeReference* and its *body* is an *XBlockExpression*. The final parser rule reads as:
@@ -1226,7 +1226,7 @@ Xbase itself comes with a standard library of such extension methods adding supp
 
 These extension methods are declared in separate Java classes. There are various ways how extension methods can be added. In the simplest case the language designer predefines which extension methods are available. Language users cannot add additional library functions using this mechanism.
 
-Another alternative is to have them looked up by a certain naming convention. Also for more general languages it is possible to let users add extension methods using imports or similar mechanisms. This approach can be seen in the language [Xtend](https://www.eclipse.org/xtend/), where extension methods are lexically imported through static imports or dependency injection.
+Another alternative is to have them looked up by a certain naming convention. Also for more general languages it is possible to let users add extension methods using imports or similar mechanisms. This approach can be seen in the language [Xtend](https://eclipse.dev/Xtext/xtend/), where extension methods are lexically imported through static imports or dependency injection.
 
 The precedence of extension methods is always lower than real member methods, i.e. you cannot override member features. Also the extension methods are not invoked polymorphic. If you have two extension methods on the scope (`foo(Object)` and `foo(String)`) the expression `(foo as Object).foo` would bind and invoke `foo(Object)`.
 

@@ -8,7 +8,7 @@ part: Reference Documentation
 
 This chapter describes the platform-independent language features that are not covered by the [grammar language](301_grammarlanguage.html).
 
-Some code examples in this chapter are given in the Xtend language, as it is much better suited for these tasks than Java. Please refer to the [Xtend documentation](https://www.xtend-lang.org) for further details. For Java developers it's extremely easy to learn, as the basics are similar and you only need to understand the additional powerful concepts.
+Some code examples in this chapter are given in the Xtend language, as it is much better suited for these tasks than Java. Please refer to the [Xtend documentation](https://eclipse.dev/Xtext/xtend) for further details. For Java developers it's extremely easy to learn, as the basics are similar and you only need to understand the additional powerful concepts.
 
 ## Code Generation {#code-generation}
 
@@ -217,7 +217,7 @@ To have a concrete example, let's deal with the following simple grammar.
 grammar org.xtext.example.mydsl.MyScopingDsl with
                                       org.eclipse.xtext.common.Terminals
 
-generate myDsl "https://www.xtext.org/example/mydsl/MyScopingDsl"
+generate myDsl "http://www.xtext.org/example/mydsl/MyScopingDsl"
 
 Root:
     elements+=Element;

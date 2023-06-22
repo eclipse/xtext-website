@@ -36,17 +36,17 @@ Xtext parsers create in-memory object graphs while consuming text. Such object-g
 The easiest way to get started is to let Xtext infer the Ecore model from your grammar. The `generate` declaration in the grammar advises the framework to do so:
 
 ```xtext
-generate domainmodel "https://www.example.org/domainmodel/Domainmodel"
+generate domainmodel "http://www.example.org/domainmodel/Domainmodel"
 ```
 
-That statement could actually be read as: generate an [EPackage]({{site.src.emf}}/plugins/org.eclipse.emf.ecore/src/org/eclipse/emf/ecore/EPackage.java) with the *name* `domainmodel` and the *nsURI* `"https://www.example.org/domainmodel/Domainmodel"`. Xtext will then add [EClasses]({{site.src.emf}}/plugins/org.eclipse.emf.ecore/src/org/eclipse/emf/ecore/EClass.java) with [EAttributes]({{site.src.emf}}/plugins/org.eclipse.emf.ecore/src/org/eclipse/emf/ecore/EAttribute.java) and [EReferences]({{site.src.emf}}/plugins/org.eclipse.emf.ecore/src/org/eclipse/emf/ecore/EReference.java) for the different parser rules in your grammar, as described in [Ecore model inference](301_grammarlanguage.html#metamodel-inference).
+That statement could actually be read as: generate an [EPackage]({{site.src.emf}}/plugins/org.eclipse.emf.ecore/src/org/eclipse/emf/ecore/EPackage.java) with the *name* `domainmodel` and the *nsURI* `"http://www.example.org/domainmodel/Domainmodel"`. Xtext will then add [EClasses]({{site.src.emf}}/plugins/org.eclipse.emf.ecore/src/org/eclipse/emf/ecore/EClass.java) with [EAttributes]({{site.src.emf}}/plugins/org.eclipse.emf.ecore/src/org/eclipse/emf/ecore/EAttribute.java) and [EReferences]({{site.src.emf}}/plugins/org.eclipse.emf.ecore/src/org/eclipse/emf/ecore/EReference.java) for the different parser rules in your grammar, as described in [Ecore model inference](301_grammarlanguage.html#metamodel-inference).
 
 #### EPackage Import {#epackage-import}
 
 If you already have an existing EPackage, you can import it using its namespace URI:
 
 ```xtext
-import "https://www.xtext.org/example/Domainmodel"
+import "http://www.xtext.org/example/Domainmodel"
 ```
 
 A [URI]({{site.src.emf}}/plugins/org.eclipse.emf.common/src/org/eclipse/emf/common/util/URI.java) (Uniform Resource Identifier) provides a simple and extensible means for identifying an abstract or physical resource. It is also possible to import EPackages using resource URIs, but it is strongly recommended to use the namespace URI instead because it is independent from the concrete location in the file system, much more portable across different machines, easier to configure in the workflow, and works better with language mixins. The import via platform URIs or file URIs can be considered deprecated and is only supported for backwards compatibility.
@@ -58,8 +58,8 @@ Using package imports usually requires some [adaptations in the generator workfl
 If you want to use multiple EPackages you need to specify aliases in the following way:
 
 ```xtext
-import "https://www.xtext.org/example/Domainmodel" as dmodel
-import 'https://www.eclipse.org/anotherPackage' as another
+import "http://www.xtext.org/example/Domainmodel" as dmodel
+import 'http://www.eclipse.org/anotherPackage' as another
 ```
 
 When referring to a type somewhere in the grammar you need to qualify the reference using that alias (e.g. `another::SomeType`). Cases where such type references occur are explained below.
@@ -107,7 +107,7 @@ It's almost in any case recommended to use [data type rules](#datatype-rules) in
 Each terminal rule returns an atomic value (an [EDataType]({{site.src.emf}}/plugins/org.eclipse.emf.ecore/src/org/eclipse/emf/ecore/EDataType.java)). By default, it's assumed that an instance of `ecore::EString` should be returned. However, if you want to provide a different type you can specify it. For instance, the rule *INT* is defined as:
 
 ```xtext
-import "https://www.eclipse.org/emf/2002/Ecore" as ecore
+import "http://www.eclipse.org/emf/2002/Ecore" as ecore
 //...
 terminal INT returns ecore::EInt:
     ('0'..'9')+;
@@ -695,7 +695,7 @@ Xtext supports the reuse of existing grammars. Grammars that are created via the
 grammar org.example.domainmodel.Domainmodel
     with org.eclipse.xtext.common.Terminals
 
-generate domainmodel "https://www.example.org/domainmodel/Domainmodel"
+generate domainmodel "http://www.example.org/domainmodel/Domainmodel"
 
 Model:
     greetings+=Greeting*;
@@ -711,7 +711,7 @@ Mixing another grammar into a language makes the rules defined in that grammar r
 ```xtext
 grammar my.SuperGrammar
 
-generate super "https://my.org/super"
+generate super "http://my.org/super"
 
 RuleA: 'a' stuff=RuleB;
 RuleB: '{' name=ID '}';
@@ -720,7 +720,7 @@ RuleB: '{' name=ID '}';
 ```xtext
 grammar my.SubGrammar with my.SuperGrammar
 
-import "https://my.org/super"
+import "http://my.org/super"
 
 Model: (ruleAs+=RuleA)*;
 
@@ -739,7 +739,7 @@ Xtext ships with a default set of predefined, reasonable and often required term
 grammar org.eclipse.xtext.common.Terminals
     hidden(WS, ML_COMMENT, SL_COMMENT)
 
-import "https://www.eclipse.org/emf/2002/Ecore" as ecore
+import "http://www.eclipse.org/emf/2002/Ecore" as ecore
 
 terminal ID:
     '^'?('a'..'z'|'A'..'Z'|'_')('a'..'z'|'A'..'Z'|'_'|'0'..'9')*;

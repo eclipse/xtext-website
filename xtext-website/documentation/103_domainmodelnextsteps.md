@@ -10,7 +10,7 @@ After you have developed your first own DSL, the question arises how the behavio
 
 ## Writing a Code Generator With Xtend {#tutorial-code-generation}
 
-As soon as you generate the Xtext artifacts from the grammar, a code generator stub is put into the runtime project of your language. Let's dive into [Xtend](https://www.eclipse.org/xtend/) and see how you can integrate your own code generator with Eclipse.
+As soon as you generate the Xtext artifacts from the grammar, a code generator stub is put into the runtime project of your language. Let's dive into [Xtend](https://www.eclipse.dev/Xtext/xtend/) and see how you can integrate your own code generator with Eclipse.
 
 In this lesson you will generate Java Beans for entities that are defined in the domainmodel DSL. For each *Entity*, a Java class is generated and each *Feature* will lead to a private field in that class including public getters and setters. For the sake of simplicity, we will use fully qualified names all over the generated code.
 
@@ -317,7 +317,7 @@ This tutorial is about testing the parser, the linker, the validator and the gen
     }
     ```
     
-    You can further simplify the code by injecting `ParseHelper` and `ValidationTestHelper` as extensions. This feature of Xtend allows to add new methods to a given type without modifying it. You can read more about extension methods in the [Xtend documentation](https://www.eclipse.org/xtend/documentation/202_xtend_classes_members.html#extension-methods). You can rewrite the code as follows:
+    You can further simplify the code by injecting `ParseHelper` and `ValidationTestHelper` as extensions. This feature of Xtend allows to add new methods to a given type without modifying it. You can read more about extension methods in the [Xtend documentation](https://www.eclipse.dev/Xtext/xtend/documentation/202_xtend_classes_members.html#extension-methods). You can rewrite the code as follows:
 
     ```xtend
     @Inject extension ParseHelper<Domainmodel>

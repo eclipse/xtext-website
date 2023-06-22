@@ -13,7 +13,7 @@ Xtext supports the generation of language servers that comply to the [Language S
 **Step 1:** Create a new Xtext Project with language server support and Maven as the preferred build system.
 ![Xtext project wizard](images/LSP_01_XtextWizardMaven.png)
 
-**Step 2:** Implement the Domainmodel language following the [Xtext - 15 Minutes Tutorial](https://www.eclipse.org/Xtext/documentation/102_domainmodelwalkthrough.html).
+**Step 2:** Implement the Domainmodel language following the [Xtext - 15 Minutes Tutorial](https://www.eclipse.dev/Xtext/documentation/102_domainmodelwalkthrough.html).
 
 **Step 3:** Try out the Domainmodel language server in Eclipse based on [LSP4E](https://projects.eclipse.org/projects/technology.lsp4e).
 
@@ -80,7 +80,7 @@ Xtext supports the generation of language servers that comply to the [Language S
 **Step 1:** Create a new Xtext Project with language server support and Gradle as the preferred build system.
 ![Xtext project wizard](images/LSP_06_XtextWizardGradle.png)
 
-**Step 2:** Implement the Domainmodel language following the [Xtext - 15 Minutes Tutorial](https://www.eclipse.org/Xtext/documentation/102_domainmodelwalkthrough.html).
+**Step 2:** Implement the Domainmodel language following the [Xtext - 15 Minutes Tutorial](https://www.eclipse.dev/Xtext/documentation/102_domainmodelwalkthrough.html).
 
 **Step 3:** Try out the Domainmodel language server in IntelliJ IDEA based on the [gtache LSP plugin](https://github.com/gtache/intellij-lsp).
 
@@ -113,7 +113,7 @@ Currently, Xtext supports the following LSP language features:
 	<thead>
 		<tr>
 			<th><a href="https://microsoft.github.io/language-server-protocol/specifications/specification-current/#version_3_17_0"> LSP 3.17.0 </a> (released on 2022-10-05) <br> <a href="https://github.com/eclipse-lsp4j/lsp4j/blob/main/CHANGELOG.md#v0210-may-2023"> LSP4J 0.21.0 </a>(released on 2023-05-18)</th>
-			<th><a href="https://www.eclipse.org/Xtext/releasenotes.html#/releasenotes/2023/05/29/version-2-31-0"> Xtext 2.31.0 </a> <br> (released on 2023-05-29)</th>
+			<th><a href="https://www.eclipse.dev/Xtext/releasenotes.html#/releasenotes/2023/05/29/version-2-31-0"> Xtext 2.31.0 </a> <br> (released on 2023-05-29)</th>
 		</tr>
 	</thead>
 	<tbody>
