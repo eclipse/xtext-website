@@ -300,7 +300,7 @@ The [IEvaluationContext]({{site.src.xtext}}/org.eclipse.xtext.xbase/src/org/ecli
 public Object evaluate(XExpression expression, Object thisElement) {
   IEvaluationContext evaluationContext = contextProvider.get();
   // provide initial context and implicit variables
-  evaluationContext.newValue(XbaseScopeProvider.THIS, thisElement);
+  evaluationContext.newValue(IFeatureNames.THIS, thisElement);
   
   IEvaluationResult result = xbaseInterpreter.evaluate(expression,
     evaluationContext, CancelIndicator.NullImpl);
