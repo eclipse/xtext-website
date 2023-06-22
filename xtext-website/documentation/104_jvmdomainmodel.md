@@ -79,7 +79,7 @@ The wizard will automatically open the grammar file *Domainmodel.xtext* in the e
 grammar org.example.domainmodel.Domainmodel with
                                       org.eclipse.xtext.xbase.Xbase
 
-generate domainmodel "http://www.example.org/domainmodel/Domainmodel"
+generate domainmodel "https://www.example.org/domainmodel/Domainmodel"
 
 Domainmodel:
     importSection=XImportSection?
@@ -280,7 +280,7 @@ Let's go through the code to get an idea of what is going on. (Please also refer
             boolean isPrelinkingPhase) {
     ```
 
-    Using the dispatch keyword makes sure that the method is called for instances of type *Entity* only. Have a look at the Xtend documentation on [polymorphic dispatch](http://www.eclipse.org/xtend/documentation/202_xtend_classes_members.html#polymorphic-dispatch) to understand Xtend's dispatch functions. Extending [AbstractModelInferrer]({{site.src.xtext}}/org.eclipse.xtext.xbase/src/org/eclipse/xtext/xbase/jvmmodel/AbstractModelInferrer.java) makes sure we don't have to walk the syntax model on our own.
+    Using the dispatch keyword makes sure that the method is called for instances of type *Entity* only. Have a look at the Xtend documentation on [polymorphic dispatch](https://www.eclipse.org/xtend/documentation/202_xtend_classes_members.html#polymorphic-dispatch) to understand Xtend's dispatch functions. Extending [AbstractModelInferrer]({{site.src.xtext}}/org.eclipse.xtext.xbase/src/org/eclipse/xtext/xbase/jvmmodel/AbstractModelInferrer.java) makes sure we don't have to walk the syntax model on our own.
 1.  ```xtend
     acceptor.accept(element.toClass(element.fullyQualifiedName)) [
         ...

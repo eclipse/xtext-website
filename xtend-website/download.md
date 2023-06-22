@@ -23,9 +23,9 @@ title: Download
 
 				<h3>Eclipse Updatesites</h3>
 				<p> To install the Xtend plug-in into a running Eclipse.</p>
-				<p><a href="http://download.eclipse.org/modeling/tmf/xtext/updates/composite/releases/" class="has-popover btn btn-primary btn-medium">Releases (right click &amp; copy)</a></p>
-				<p><a href="http://download.eclipse.org/modeling/tmf/xtext/updates/composite/milestones/" class="has-popover btn btn-primary btn-medium">Milestones (right click &amp; copy)</a></p>
-				<p><a href="http://download.eclipse.org/modeling/tmf/xtext/updates/composite/latest/" class="has-popover btn btn-primary btn-medium">Nightly Builds (right click &amp; copy)</a></p>
+				<p><a href="https://download.eclipse.org/modeling/tmf/xtext/updates/composite/releases/" class="has-popover btn btn-primary btn-medium">Releases (right click &amp; copy)</a></p>
+				<p><a href="https://download.eclipse.org/modeling/tmf/xtext/updates/composite/milestones/" class="has-popover btn btn-primary btn-medium">Milestones (right click &amp; copy)</a></p>
+				<p><a href="https://download.eclipse.org/modeling/tmf/xtext/updates/composite/latest/" class="has-popover btn btn-primary btn-medium">Nightly Builds (right click &amp; copy)</a></p>
 				<h3>Installation Instructions</h3>
 				<ul>
 					<li>Choose <e>Help -&gt; Install New Software...</e> from the menu bar and <e>Add...</e>.</li>

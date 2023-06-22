@@ -6,7 +6,7 @@ part: Reference Documentation
 
 # {{page.title}} {#emf-integration}
 
-Xtext relies heavily on EMF internally, but it can also be used as the serialization back-end of other EMF-based tools. In this section we introduce the basic concepts of the [Eclipse Modeling Framework (EMF)](http://www.eclipse.org/modeling/emf/) in the context of Xtext. If you want to learn more about EMF, we recommend reading the [EMF book](http://www.eclipse.org/modeling/emf/).
+Xtext relies heavily on EMF internally, but it can also be used as the serialization back-end of other EMF-based tools. In this section we introduce the basic concepts of the [Eclipse Modeling Framework (EMF)](https://www.eclipse.org/modeling/emf/) in the context of Xtext. If you want to learn more about EMF, we recommend reading the [EMF book](https://www.eclipse.org/modeling/emf/).
 
 ## Model, Ecore Model, and Ecore {#model-metamodel}
 
@@ -129,7 +129,7 @@ Furthermore it's a good idea to have some kind of conflict resolution strategy t
 
 We do no longer maintain the GMF example code and have removed it from our installation. You can still access the last version of the source code form our [source code repository](https://github.com/eclipse/xtext-archive/tree/v2.10.0/examples/org.eclipse.xtext.xtext.ui.examples/contents).
 
-The [Graphical Modeling Framework (GMF)](http://www.eclipse.org/modeling/gmp/?project=gmf) allows to create graphical diagram editors for Ecore models. To illustrate how to build a GMF editor on top of an [XtextResource]({{site.src.xtext}}/org.eclipse.xtext/src/org/eclipse/xtext/resource/XtextResource.java) we have provided an example. You must have the Helios version 2.3 of GMF Notation, Runtime and Tooling and their dependencies installed in your workbench to run the example. With other versions of GMF it might work to regenerate the diagram code.
+The [Graphical Modeling Framework (GMF)](https://www.eclipse.org/modeling/gmp/?project=gmf) allows to create graphical diagram editors for Ecore models. To illustrate how to build a GMF editor on top of an [XtextResource]({{site.src.xtext}}/org.eclipse.xtext/src/org/eclipse/xtext/resource/XtextResource.java) we have provided an example. You must have the Helios version 2.3 of GMF Notation, Runtime and Tooling and their dependencies installed in your workbench to run the example. With other versions of GMF it might work to regenerate the diagram code.
 
 The example consists of a number of plug-ins
 

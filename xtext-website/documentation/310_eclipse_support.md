@@ -245,7 +245,7 @@ This default behaviour can be customized by extending the [DefaultAutoEditStrate
 
 ## Template Proposals {#templates}
 
-Xtext-based editors automatically support code templates. That means that you get the corresponding preference page where users can add and change template proposals. If you want to ship a couple of default templates, you have to put a file named *templates.xml* inside the *templates* directory of the generated UI-plug-in. This file contains templates in a format as described in the [Eclipse online help](http://help.eclipse.org/luna/topic/org.eclipse.cdt.doc.user/tasks/cdt_t_imp_code_temp.htm).
+Xtext-based editors automatically support code templates. That means that you get the corresponding preference page where users can add and change template proposals. If you want to ship a couple of default templates, you have to put a file named *templates.xml* inside the *templates* directory of the generated UI-plug-in. This file contains templates in a format as described in the [Eclipse online help](https://help.eclipse.org/luna/topic/org.eclipse.cdt.doc.user/tasks/cdt_t_imp_code_temp.htm).
 
 ![](images/preferences_templates.png)
 

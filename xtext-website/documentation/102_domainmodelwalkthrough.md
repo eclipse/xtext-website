@@ -69,7 +69,7 @@ The wizard will automatically open the grammar file *Domainmodel.xtext* in the e
 grammar org.example.domainmodel.Domainmodel with
                                       org.eclipse.xtext.common.Terminals
 
-generate domainmodel "http://www.example.org/domainmodel/Domainmodel"
+generate domainmodel "https://www.example.org/domainmodel/Domainmodel"
 
 Model:
     greetings+=Greeting*;
@@ -84,7 +84,7 @@ Let's now just replace that grammar definition with the one for our entities lan
 grammar org.example.domainmodel.Domainmodel with
                                       org.eclipse.xtext.common.Terminals
 
-generate domainmodel "http://www.example.org/domainmodel/Domainmodel"
+generate domainmodel "https://www.example.org/domainmodel/Domainmodel"
 
 Domainmodel:
     (elements+=Type)*;
@@ -271,7 +271,7 @@ That's all for the grammar. It should now read as
 grammar org.example.domainmodel.Domainmodel with
                                       org.eclipse.xtext.common.Terminals
 
-generate domainmodel "http://www.example.org/domainmodel/Domainmodel"
+generate domainmodel "https://www.example.org/domainmodel/Domainmodel"
 
 Domainmodel:
     (elements+=AbstractElement)*;

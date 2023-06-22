@@ -21,7 +21,7 @@ Using the JVM types model is very simple. First of all, the grammar has to impor
 ```xtext
 grammar org.xtext.example.mydsl.MyDsl with org.eclipse.xtext.xbase.Xtype
 ...
-import "http://www.eclipse.org/xtext/common/JavaVMTypes" as jvmTypes
+import "https://www.eclipse.org/xtext/common/JavaVMTypes" as jvmTypes
 ```
 
 The next step is to actually refer to an imported concept. Let's define a mapping to available Java types for the simple data types in the domain model language. This can be done with a simple cross-reference:
@@ -68,7 +68,7 @@ Because we can express all kinds of Java type references directly now, an indire
 grammar org.eclipse.xtext.example.Domainmodel with
                                       org.eclipse.xtext.xbase.Xbase
 
-generate domainmodel "http://www.eclipse.org/xtext/example/Domainmodel"
+generate domainmodel "https://www.eclipse.org/xtext/example/Domainmodel"
 
 Domainmodel:
   importSection=XImportSection?
@@ -244,7 +244,7 @@ grammar org.xtext.example.mydsl.MyDsl with org.eclipse.xtext.xbase.Xbase
 If you want to refer to [EClassifiers]({{site.src.emf}}/plugins/org.eclipse.emf.ecore/src/org/eclipse/emf/ecore/EClassifier.java) from the Xbase model, you need to import Xbase first:
 
 ```xtext
-import "http://www.eclipse.org/xtext/xbase/Xbase" as xbase
+import "https://www.eclipse.org/xtext/xbase/Xbase" as xbase
 ```
 
 Now identify the location in your grammar where you want references to Java types and Xbase expressions to appear and call the appropriate rules of the super grammar. Adding Xbase expression to the domainmodel example leads to the additional concept *Operation*: An *Operation*'s parameters are *FullJvmFormalParameters*. The production rule for *FullJvmFormalParameters* expects both the name and the type here. That is reasonable since the type of parameters should not be inferred. The operation's return type is a *JvmTypeReference* and its *body* is an *XBlockExpression*. The final parser rule reads as:
@@ -365,7 +365,7 @@ terminal ID:
 
 #### Comments {#xbase-syntax-comments}
 
-Xbase comes with two different kinds of comments: Single-line comments and multi-line comments. The syntax is the same as the one known from Java (see [§ 3.7 Comments](http://docs.oracle.com/javase/specs/jls/se7/html/jls-3.html#jls-3.7)).
+Xbase comes with two different kinds of comments: Single-line comments and multi-line comments. The syntax is the same as the one known from Java (see [§ 3.7 Comments](https://docs.oracle.com/javase/specs/jls/se7/html/jls-3.html#jls-3.7)).
 
 #### White Space {#xbase-syntax-whitespace}
 
@@ -424,7 +424,7 @@ There is no parser rule for a simple type reference, as it is expressed as a par
 
 #### Parameterized Type References {#xbase-types-parameterized-type-reference}
 
-The general syntax for type references allows to take any number of type arguments. The semantics as well as the syntax is almost the same as in Java, so please refer to the third edition of the [Java Language Specification](http://docs.oracle.com/javase/specs/jls/se7/html/index.html).
+The general syntax for type references allows to take any number of type arguments. The semantics as well as the syntax is almost the same as in Java, so please refer to the third edition of the [Java Language Specification](https://docs.oracle.com/javase/specs/jls/se7/html/index.html).
 
 The only difference is that in Xbase a type reference can also be a function type. In the following the full syntax of type references is shown, including function types and type arguments.
 
@@ -465,7 +465,7 @@ For more information on lambda expressions see [the corresponding section](#xbas
 
 Type conformance rules are used in order to find out whether some expression can be used in a certain situation. For instance when assigning a value to a variable, the type of the right hand expression needs to conform to the type of the variable.
 
-As Xbase implements the type system of Java it also fully supports the conformance rules defined in the [Java Language Specification](http://docs.oracle.com/javase/specs/jls/se7/html/jls-5.html).
+As Xbase implements the type system of Java it also fully supports the conformance rules defined in the [Java Language Specification](https://docs.oracle.com/javase/specs/jls/se7/html/jls-5.html).
 
 Some types in Xbase can be used synonymously even if they do not conform to each other in Java. An example for this are arrays and lists or function types with compatible function parameters. Objects of these types are implicitly converted by Xbase on demand.
 
@@ -489,7 +489,7 @@ A literal denotes a fixed unchangeable value. Literals for strings, numbers, boo
 
 String literals can either use `'single quotes'` or `"double quotes"` as their enclosing characters. When using double quotes all literals allowed by Java string literals are supported. In addition new line characters are allowed, i.e. in Xbase string literals can span multiple lines. When using single quotes the only difference is that single quotes within the literal have to be escaped while double quotes do not.
 
-See [§ 3.10.5 String Literals](http://docs.oracle.com/javase/specs/jls/se7/html/jls-3.html#jls-3.10.5)
+See [§ 3.10.5 String Literals](https://docs.oracle.com/javase/specs/jls/se7/html/jls-3.html#jls-3.10.5)
 
 In contrast to Java, equal string literals within the same class do not necessarily refer to the same instance at runtime, especially in the interpreted mode.
 
@@ -563,7 +563,7 @@ Previous versions of Xbase used the dollar as the delimiter character for nested
 
 Type cast behave the same as in Java, but have a more readable syntax. Type casts bind stronger than any other operator but weaker than feature calls.
 
-The conformance rules for casts are defined in the [Java Language Specification](http://docs.oracle.com/javase/specs/jls/se7/html/jls-5.html#jls-5.5).
+The conformance rules for casts are defined in the [Java Language Specification](https://docs.oracle.com/javase/specs/jls/se7/html/jls-5.html#jls-5.5).
 
 ##### Examples
 
@@ -1188,7 +1188,7 @@ It is possible to throw [Throwable]({{site.javadoc.java}}/java/lang/Throwable.ht
 
 #### Try, Catch, Finally {#xbase-expressions-try-catch}
 
-The try-catch-finally expression is used to handle exceptional situations. You are not forced to declare checked exceptions. If you don't catch checked exceptions, they are thrown in a way the compiler does not complain about a missing throws clause, using the sneaky-throw technique introduced by [Lombok](http://projectlombok.org/features/SneakyThrows.html).
+The try-catch-finally expression is used to handle exceptional situations. You are not forced to declare checked exceptions. If you don't catch checked exceptions, they are thrown in a way the compiler does not complain about a missing throws clause, using the sneaky-throw technique introduced by [Lombok](https://projectlombok.org/features/SneakyThrows.html).
 
 ```xbase
   try {
@@ -1202,7 +1202,7 @@ The try-catch-finally expression is used to handle exceptional situations. You a
 
 #### Synchronized {#xbase-expressions-synchronized}
 
-The synchonized expression does the same as it does in Java (see [Java Language Specification](http://docs.oracle.com/javase/specs/jls/se7/html/jls-14.html#jls-14.19)). The only difference is that in Xbase it is an expression and can therefore be used at more places.
+The synchonized expression does the same as it does in Java (see [Java Language Specification](https://docs.oracle.com/javase/specs/jls/se7/html/jls-14.html#jls-14.19)). The only difference is that in Xbase it is an expression and can therefore be used at more places.
 
 ```xtend
   synchronized(lock) {

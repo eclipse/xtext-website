@@ -46,7 +46,7 @@ In the upcoming dialog you will find two examples for Xtend:
     ```
 
     The *Movies* example explained in detail [in the next section](102_moviesexample.html) is also included there.
-*   *Xtend Solutions For Euler* contains solutions to some of the problems you will find at [Project Euler](http://projecteuler.net/). These examples are leveraging the whole expressive power of Xtend. For instance [Euler Problem 1](http://projecteuler.net/problem=1) can be solved with this expression :     
+*   *Xtend Solutions For Euler* contains solutions to some of the problems you will find at [Project Euler](https://projecteuler.net/). These examples are leveraging the whole expressive power of Xtend. For instance [Euler Problem 1](https://projecteuler.net/problem=1) can be solved with this expression :     
     
     ```xtend
     (1..999).filter[ i | i % 3 == 0 || i % 5 == 0 ].reduce[ i1, i2 | i1 + i2 ]

@@ -174,7 +174,7 @@ override String second(List<String> elements) {
 
 Xtend does not force you to catch or declare checked exceptions. Nevertheless, you can still declare the exceptions thrown in a method's body using the `throws` clause as in Java.
 
-If you do not declare checked exceptions in your method but they are possibly thrown in your code, the compiler will throw the checked exception silently (using the sneaky-throw technique introduced by [Lombok](http://projectlombok.org/features/SneakyThrows.html)). 
+If you do not declare checked exceptions in your method but they are possibly thrown in your code, the compiler will throw the checked exception silently (using the sneaky-throw technique introduced by [Lombok](https://projectlombok.org/features/SneakyThrows.html)). 
 
 ```xtend
 /*
@@ -226,7 +226,7 @@ def <T> second(List<T> elements) {
 }
 ```
 
-Type parameter bounds and constraints are supported and share the same syntax and semantics as defined in the [the Java Language Specification](http://docs.oracle.com/javase/specs/jls/se6/html/classes.html#8.4.4).
+Type parameter bounds and constraints are supported and share the same syntax and semantics as defined in the [the Java Language Specification](https://docs.oracle.com/javase/specs/jls/se6/html/classes.html#8.4.4).
 
 ### Operator Declarations {#operator-declaration}
 
@@ -464,7 +464,7 @@ In addition to the keyword `create` one specifies two expressions. The first exp
 
 ## Annotations {#annotations}
 
-Annotations are available on classes, fields, methods and parameters. They are prefixed with the `@` character and accept a number of key-value pairs or a default value for the annotation property named `value`. Annotation values that expect arrays can handle single values, too. Value arrays are enclosed in array literals `#['first', 'second']`. The semantics for annotations are exactly like defined in the [Java Language Specification](http://docs.oracle.com/javase/specs/jls/se6/html/interfaces.html#9.7). Here is an example:
+Annotations are available on classes, fields, methods and parameters. They are prefixed with the `@` character and accept a number of key-value pairs or a default value for the annotation property named `value`. Annotation values that expect arrays can handle single values, too. Value arrays are enclosed in array literals `#['first', 'second']`. The semantics for annotations are exactly like defined in the [Java Language Specification](https://docs.oracle.com/javase/specs/jls/se6/html/interfaces.html#9.7). Here is an example:
 
 ```xtend
 @TypeAnnotation("some value")
@@ -607,7 +607,7 @@ interface MyInterface<T> extends OtherInterface {
 }
 ```
 
-Since version 8 of the Java language, interfaces are allowed to contain non-abstract instance methods, called [default methods](http://docs.oracle.com/javase/tutorial/java/IandI/defaultmethods.html), as well as static methods. This is also supported in Xtend (since 2.8): if Java 8 is selected as target language version, interfaces are allowed to declare methods with bodies like in the following example. 
+Since version 8 of the Java language, interfaces are allowed to contain non-abstract instance methods, called [default methods](https://docs.oracle.com/javase/tutorial/java/IandI/defaultmethods.html), as well as static methods. This is also supported in Xtend (since 2.8): if Java 8 is selected as target language version, interfaces are allowed to declare methods with bodies like in the following example. 
 
 ```xtend
 interface MyInterface {
