@@ -925,7 +925,7 @@ is the a short hand for
 
 ##### Typing {#xbase-expressions-if-type-inference}
 
-The type of an `if` expression is calculated from the types `T1` and `T2` of the two expressions `e1` and `e2`. It uses the rules defined in the [common super types](#xbase-types-common-super-type) section, if an explicit `else` branch is given. If it is ommitted, the type of the `if` expression is the type `T` of the expression `e` of the form `if (b) e`.
+The type of an `if` expression is calculated from the types `T1` and `T2` of the two expressions `e1` and `e2`. It uses the rules defined in the [common super types](#xbase-types-common-super-type) section, if an explicit `else` branch is given. If it is omitted, the type of the `if` expression is the type `T` of the expression `e` of the form `if (b) e`.
 
 ##### Examples
 
