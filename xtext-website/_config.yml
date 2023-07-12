@@ -43,9 +43,9 @@ src:
 javadoc:
   eclipse-platform: "https://help.eclipse.org/luna/topic/org.eclipse.platform.doc.isv/reference/api"
   eclipse-jdt: "https://help.eclipse.org/luna/topic/org.eclipse.jdt.doc.isv/reference/api"
-  java: "https://docs.oracle.com/javase/8/docs/api"
+  java: "https://docs.oracle.com/javase/11/docs/api"
   javaee: "https://docs.oracle.com/javaee/7/api"
-  junit: "https://junit.sourceforge.net/javadoc"
+  junit: "https://junit.org/junit4/javadoc/4.13"
   guice: "https://google.github.io/guice/api-docs/latest/javadoc"
 
 edit-repo : "https://github.com/eclipse/xtext-website/edit/published/xtext-website/"
