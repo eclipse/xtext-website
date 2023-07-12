@@ -6,7 +6,7 @@ part: Getting Started
 
 # {{page.title}} {#jvm-domain-model}
 
-In this tutorial we will basically implement the [domain model language](https://www.eclipse.org/Xtext/documentation/103_domainmodelnextsteps.html) again, but this time we will make use of the special JVM support shipped with Xtext. This kind of language is really a sweet spot for DSLs, so feel free to use this as a blueprint and add your project specific features later on.
+In this tutorial we will basically implement the [domain model language](https://www.eclipse.dev/Xtext/documentation/103_domainmodelnextsteps.html) again, but this time we will make use of the special JVM support shipped with Xtext. This kind of language is really a sweet spot for DSLs, so feel free to use this as a blueprint and add your project specific features later on.
 
 The revised domain model language supports expressions and cross-links to Java types. It is directly translated to Java source code. The syntax should look very familiar. Here is an example:
 
@@ -280,7 +280,7 @@ Let's go through the code to get an idea of what is going on. (Please also refer
             boolean isPrelinkingPhase) {
     ```
 
-    Using the dispatch keyword makes sure that the method is called for instances of type *Entity* only. Have a look at the Xtend documentation on [polymorphic dispatch](http://www.eclipse.org/xtend/documentation/202_xtend_classes_members.html#polymorphic-dispatch) to understand Xtend's dispatch functions. Extending [AbstractModelInferrer]({{site.src.xtext}}/org.eclipse.xtext.xbase/src/org/eclipse/xtext/xbase/jvmmodel/AbstractModelInferrer.java) makes sure we don't have to walk the syntax model on our own.
+    Using the dispatch keyword makes sure that the method is called for instances of type *Entity* only. Have a look at the Xtend documentation on [polymorphic dispatch](https://www.eclipse.dev/Xtext/xtend/documentation/202_xtend_classes_members.html#polymorphic-dispatch) to understand Xtend's dispatch functions. Extending [AbstractModelInferrer]({{site.src.xtext}}/org.eclipse.xtext.xbase/src/org/eclipse/xtext/xbase/jvmmodel/AbstractModelInferrer.java) makes sure we don't have to walk the syntax model on our own.
 1.  ```xtend
     acceptor.accept(element.toClass(element.fullyQualifiedName)) [
         ...
@@ -293,7 +293,7 @@ Let's go through the code to get an idea of what is going on. (Please also refer
     documentation = element.documentation
     ```
 
-    Here we assign some JavaDoc to the newly created element. The assignment is translated to an invocation of the method *[JvmTypesBuilder]({{site.src.xtext}}/org.eclipse.xtext.xbase/src/org/eclipse/xtext/xbase/jvmmodel/JvmTypesBuilder.java).setDocumentation([JvmIdentifiableElement]({{site.src.xtext}}/org.eclipse.xtext.common.types/emf-gen/org/eclipse/xtext/common/types/JvmIdentifiableElement.java), String)*, and `element.documentation` is in fact calling the extension method *[JvmTypesBuilder]({{site.src.xtext}}/org.eclipse.xtext.xbase/src/org/eclipse/xtext/xbase/jvmmodel/JvmTypesBuilder.java).getDocumentation([EObject]({{site.src.emf}}/plugins/org.eclipse.emf.ecore/src/org/eclipse/emf/ecore/EObject.java))*. Such extension methods are explained in detail in the [Xtend documentation](https://www.eclipse.org/xtend/documentation/202_xtend_classes_members.html#extension-methods).
+    Here we assign some JavaDoc to the newly created element. The assignment is translated to an invocation of the method *[JvmTypesBuilder]({{site.src.xtext}}/org.eclipse.xtext.xbase/src/org/eclipse/xtext/xbase/jvmmodel/JvmTypesBuilder.java).setDocumentation([JvmIdentifiableElement]({{site.src.xtext}}/org.eclipse.xtext.common.types/emf-gen/org/eclipse/xtext/common/types/JvmIdentifiableElement.java), String)*, and `element.documentation` is in fact calling the extension method *[JvmTypesBuilder]({{site.src.xtext}}/org.eclipse.xtext.xbase/src/org/eclipse/xtext/xbase/jvmmodel/JvmTypesBuilder.java).getDocumentation([EObject]({{site.src.emf}}/plugins/org.eclipse.emf.ecore/src/org/eclipse/emf/ecore/EObject.java))*. Such extension methods are explained in detail in the [Xtend documentation](https://www.eclipse.dev/Xtext/xtend/documentation/202_xtend_classes_members.html#extension-methods).
 1.  ```xtend
     if (element.superType !== null)
         superTypes += entity.superType.cloneWithProxies

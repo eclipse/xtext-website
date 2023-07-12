@@ -300,7 +300,7 @@ The [IEvaluationContext]({{site.src.xtext}}/org.eclipse.xtext.xbase/src/org/ecli
 public Object evaluate(XExpression expression, Object thisElement) {
   IEvaluationContext evaluationContext = contextProvider.get();
   // provide initial context and implicit variables
-  evaluationContext.newValue(XbaseScopeProvider.THIS, thisElement);
+  evaluationContext.newValue(IFeatureNames.THIS, thisElement);
   
   IEvaluationResult result = xbaseInterpreter.evaluate(expression,
     evaluationContext, CancelIndicator.NullImpl);
@@ -365,7 +365,7 @@ terminal ID:
 
 #### Comments {#xbase-syntax-comments}
 
-Xbase comes with two different kinds of comments: Single-line comments and multi-line comments. The syntax is the same as the one known from Java (see [§ 3.7 Comments](http://docs.oracle.com/javase/specs/jls/se7/html/jls-3.html#jls-3.7)).
+Xbase comes with two different kinds of comments: Single-line comments and multi-line comments. The syntax is the same as the one known from Java (see [§ 3.7 Comments](https://docs.oracle.com/javase/specs/jls/se7/html/jls-3.html#jls-3.7)).
 
 #### White Space {#xbase-syntax-whitespace}
 
@@ -424,7 +424,7 @@ There is no parser rule for a simple type reference, as it is expressed as a par
 
 #### Parameterized Type References {#xbase-types-parameterized-type-reference}
 
-The general syntax for type references allows to take any number of type arguments. The semantics as well as the syntax is almost the same as in Java, so please refer to the third edition of the [Java Language Specification](http://docs.oracle.com/javase/specs/jls/se7/html/index.html).
+The general syntax for type references allows to take any number of type arguments. The semantics as well as the syntax is almost the same as in Java, so please refer to the third edition of the [Java Language Specification](https://docs.oracle.com/javase/specs/jls/se7/html/index.html).
 
 The only difference is that in Xbase a type reference can also be a function type. In the following the full syntax of type references is shown, including function types and type arguments.
 
@@ -465,7 +465,7 @@ For more information on lambda expressions see [the corresponding section](#xbas
 
 Type conformance rules are used in order to find out whether some expression can be used in a certain situation. For instance when assigning a value to a variable, the type of the right hand expression needs to conform to the type of the variable.
 
-As Xbase implements the type system of Java it also fully supports the conformance rules defined in the [Java Language Specification](http://docs.oracle.com/javase/specs/jls/se7/html/jls-5.html).
+As Xbase implements the type system of Java it also fully supports the conformance rules defined in the [Java Language Specification](https://docs.oracle.com/javase/specs/jls/se7/html/jls-5.html).
 
 Some types in Xbase can be used synonymously even if they do not conform to each other in Java. An example for this are arrays and lists or function types with compatible function parameters. Objects of these types are implicitly converted by Xbase on demand.
 
@@ -489,7 +489,7 @@ A literal denotes a fixed unchangeable value. Literals for strings, numbers, boo
 
 String literals can either use `'single quotes'` or `"double quotes"` as their enclosing characters. When using double quotes all literals allowed by Java string literals are supported. In addition new line characters are allowed, i.e. in Xbase string literals can span multiple lines. When using single quotes the only difference is that single quotes within the literal have to be escaped while double quotes do not.
 
-See [§ 3.10.5 String Literals](http://docs.oracle.com/javase/specs/jls/se7/html/jls-3.html#jls-3.10.5)
+See [§ 3.10.5 String Literals](https://docs.oracle.com/javase/specs/jls/se7/html/jls-3.html#jls-3.10.5)
 
 In contrast to Java, equal string literals within the same class do not necessarily refer to the same instance at runtime, especially in the interpreted mode.
 
@@ -563,7 +563,7 @@ Previous versions of Xbase used the dollar as the delimiter character for nested
 
 Type cast behave the same as in Java, but have a more readable syntax. Type casts bind stronger than any other operator but weaker than feature calls.
 
-The conformance rules for casts are defined in the [Java Language Specification](http://docs.oracle.com/javase/specs/jls/se7/html/jls-5.html#jls-5.5).
+The conformance rules for casts are defined in the [Java Language Specification](https://docs.oracle.com/javase/specs/jls/se7/html/jls-5.html#jls-5.5).
 
 ##### Examples
 
@@ -925,7 +925,7 @@ is the a short hand for
 
 ##### Typing {#xbase-expressions-if-type-inference}
 
-The type of an `if` expression is calculated from the types `T1` and `T2` of the two expressions `e1` and `e2`. It uses the rules defined in the [common super types](#xbase-types-common-super-type) section, if an explicit `else` branch is given. If it is ommitted, the type of the `if` expression is the type `T` of the expression `e` of the form `if (b) e`.
+The type of an `if` expression is calculated from the types `T1` and `T2` of the two expressions `e1` and `e2`. It uses the rules defined in the [common super types](#xbase-types-common-super-type) section, if an explicit `else` branch is given. If it is omitted, the type of the `if` expression is the type `T` of the expression `e` of the form `if (b) e`.
 
 ##### Examples
 
@@ -1188,7 +1188,7 @@ It is possible to throw [Throwable]({{site.javadoc.java}}/java/lang/Throwable.ht
 
 #### Try, Catch, Finally {#xbase-expressions-try-catch}
 
-The try-catch-finally expression is used to handle exceptional situations. You are not forced to declare checked exceptions. If you don't catch checked exceptions, they are thrown in a way the compiler does not complain about a missing throws clause, using the sneaky-throw technique introduced by [Lombok](http://projectlombok.org/features/SneakyThrows.html).
+The try-catch-finally expression is used to handle exceptional situations. You are not forced to declare checked exceptions. If you don't catch checked exceptions, they are thrown in a way the compiler does not complain about a missing throws clause, using the sneaky-throw technique introduced by [Lombok](https://projectlombok.org/features/SneakyThrows.html).
 
 ```xbase
   try {
@@ -1202,7 +1202,7 @@ The try-catch-finally expression is used to handle exceptional situations. You a
 
 #### Synchronized {#xbase-expressions-synchronized}
 
-The synchonized expression does the same as it does in Java (see [Java Language Specification](http://docs.oracle.com/javase/specs/jls/se7/html/jls-14.html#jls-14.19)). The only difference is that in Xbase it is an expression and can therefore be used at more places.
+The synchonized expression does the same as it does in Java (see [Java Language Specification](https://docs.oracle.com/javase/specs/jls/se7/html/jls-14.html#jls-14.19)). The only difference is that in Xbase it is an expression and can therefore be used at more places.
 
 ```xtend
   synchronized(lock) {
@@ -1226,7 +1226,7 @@ Xbase itself comes with a standard library of such extension methods adding supp
 
 These extension methods are declared in separate Java classes. There are various ways how extension methods can be added. In the simplest case the language designer predefines which extension methods are available. Language users cannot add additional library functions using this mechanism.
 
-Another alternative is to have them looked up by a certain naming convention. Also for more general languages it is possible to let users add extension methods using imports or similar mechanisms. This approach can be seen in the language [Xtend](https://www.eclipse.org/xtend/), where extension methods are lexically imported through static imports or dependency injection.
+Another alternative is to have them looked up by a certain naming convention. Also for more general languages it is possible to let users add extension methods using imports or similar mechanisms. This approach can be seen in the language [Xtend](https://eclipse.dev/Xtext/xtend/), where extension methods are lexically imported through static imports or dependency injection.
 
 The precedence of extension methods is always lower than real member methods, i.e. you cannot override member features. Also the extension methods are not invoked polymorphic. If you have two extension methods on the scope (`foo(Object)` and `foo(String)`) the expression `(foo as Object).foo` would bind and invoke `foo(Object)`.
 

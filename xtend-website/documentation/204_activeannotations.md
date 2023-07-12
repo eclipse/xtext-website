@@ -6,7 +6,7 @@ part: Reference Documentation
 
 # {{page.title}} {#active-annotations}
 
-*Active annotations* allow developers to participate in the translation process of Xtend source code to Java code via library. That's useful in cases where Java requires to write a lot of boilerplate manually. For instance, many of the good old design patterns fall into this category. With *active annotations* you no longer need to remember how the [Visitor](http://en.wikipedia.org/wiki/Visitor_pattern) or the [Observer](http://en.wikipedia.org/wiki/Observer_pattern) pattern should be implemented. In Xtend you can implement the expansion of such patterns in a library and let the compiler do the heavy lifting for you.
+*Active annotations* allow developers to participate in the translation process of Xtend source code to Java code via library. That's useful in cases where Java requires to write a lot of boilerplate manually. For instance, many of the good old design patterns fall into this category. With *active annotations* you no longer need to remember how the [Visitor](https://en.wikipedia.org/wiki/Visitor_pattern) or the [Observer](https://en.wikipedia.org/wiki/Observer_pattern) pattern should be implemented. In Xtend you can implement the expansion of such patterns in a library and let the compiler do the heavy lifting for you.
 
 An *active annotation* is just an annotation declared either in Java or Xtend, which is itself annotated with [Active]({{site.src.xtext}}/org.eclipse.xtend.lib.macro/src/org/eclipse/xtend/lib/macro/Active.java). `@Active` takes a type literal as a parameter pointing to the processor.
 

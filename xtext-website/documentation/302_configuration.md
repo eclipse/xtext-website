@@ -433,7 +433,7 @@ The only thing you have to do in order to use this factory is to prefix the clas
 
 ## Logging
 
-Xtext uses [Apache Log4j](http://logging.apache.org/log4j/) for logging. It is configured using files named *log4j.properties*, which are looked up in the root of the Java class path. If you want to change or provide configuration at runtime (i.e. non-OSGi), all you have to do is putting such a *log4j.properties* in place and make sure that it is not overridden by other *log4j.properties* in previous class path entries.
+Xtext uses [Apache Log4j](https://logging.apache.org/log4j/) for logging. It is configured using files named *log4j.properties*, which are looked up in the root of the Java class path. If you want to change or provide configuration at runtime (i.e. non-OSGi), all you have to do is putting such a *log4j.properties* in place and make sure that it is not overridden by other *log4j.properties* in previous class path entries.
 
 In OSGi you provide configuration by creating a fragment for *org.apache.log4j*. In this case you need to make sure that there is not any second fragment contributing a *log4j.properties* file.
 

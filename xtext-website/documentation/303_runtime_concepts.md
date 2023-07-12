@@ -8,7 +8,7 @@ part: Reference Documentation
 
 This chapter describes the platform-independent language features that are not covered by the [grammar language](301_grammarlanguage.html).
 
-Some code examples in this chapter are given in the Xtend language, as it is much better suited for these tasks than Java. Please refer to the [Xtend documentation](http://www.xtend-lang.org) for further details. For Java developers it's extremely easy to learn, as the basics are similar and you only need to understand the additional powerful concepts.
+Some code examples in this chapter are given in the Xtend language, as it is much better suited for these tasks than Java. Please refer to the [Xtend documentation](https://eclipse.dev/Xtext/xtend) for further details. For Java developers it's extremely easy to learn, as the basics are similar and you only need to understand the additional powerful concepts.
 
 ## Code Generation {#code-generation}
 
@@ -437,7 +437,7 @@ classpathScope{stuff from bin/}
 -> NULLSCOPE{}
 ```
 
-Please find the motivation behind this and some additional details in [this blog post](http://blog.efftinge.de/2009/01/xtext-scopes-and-emf-index.html).
+Please find the motivation behind this and some additional details in [this blog post](https://blog.efftinge.de/2009/01/xtext-scopes-and-emf-index.html).
 
 ### Imported Namespace Aware Scoping {#namespace-imports}
 
@@ -665,7 +665,7 @@ More detailed information about the API is available as [JavaDoc on the org.ecli
 
 ## Character Encoding {#encoding}
 
-Encoding, aka. *character set*, describes the way characters are encoded into bytes and vice versa. Famous standard encodings are *UTF-8* or *ISO-8859-1*. The list of available encodings can be determined by calling [Charset.availableCharsets()]({{site.javadoc.java}}/java/nio/charset/Charset.html). There is also a list of encodings and their canonical Java names in the [API docs](http://download.oracle.com/javase/1.5.0/docs/guide/intl/encoding.doc.html).
+Encoding, aka. *character set*, describes the way characters are encoded into bytes and vice versa. Famous standard encodings are *UTF-8* or *ISO-8859-1*. The list of available encodings can be determined by calling [Charset.availableCharsets()]({{site.javadoc.java}}/java/nio/charset/Charset.html). There is also a list of encodings and their canonical Java names in the [API docs](https://download.oracle.com/javase/1.5.0/docs/guide/intl/encoding.doc.html).
 
 Unfortunately, each platform and/or spoken language tends to define its own native encoding, e.g. *Cp1258* on Windows in Vietnamese or *MacIceland* on Mac OS X in Icelandic.
 
