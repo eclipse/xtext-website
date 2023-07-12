@@ -3,11 +3,11 @@ layout: documentation
 title: Continuous Integration (with Maven)
 part: Reference Documentation
 upsite:
-  eclipse: http://download.eclipse.org/
-  xtext: http://download.eclipse.org/modeling/tmf/xtext/updates/
-  emf: http://download.eclipse.org/modeling/emf/emf/updates/
-  mwe: http://download.eclipse.org/modeling/emft/mwe/updates/
-  xpand: http://download.eclipse.org/modeling/m2t/xpand/updates/
+  eclipse: https://download.eclipse.org/
+  xtext: https://download.eclipse.org/modeling/tmf/xtext/updates/
+  emf: https://download.eclipse.org/modeling/emf/emf/updates/
+  mwe: https://download.eclipse.org/modeling/emft/mwe/updates/
+  xpand: https://download.eclipse.org/modeling/m2t/xpand/updates/
 ---
 
 # {{page.title}} {#continuous-integration}
@@ -22,7 +22,7 @@ If you have a look at the example, you'll find seven different projects of which
 
 ## Building an Xtext language with Maven and Tycho {#tycho-build}
 
-Although the runtime aspects of an Xtext language is not dependent on Eclipse or its OSGi container, an Xtext language is developed in the form of OSGi bundles. For this kind of builds most people rely on [Tycho](http://eclipse.org/tycho/), which is an OSGi/P2 adapter plug-in for Maven builds. Tycho obtains much information from the OSGi bundle's manifest. Additionally needed information is configured through the pom.xml file which sits at the root of each project.
+Although the runtime aspects of an Xtext language is not dependent on Eclipse or its OSGi container, an Xtext language is developed in the form of OSGi bundles. For this kind of builds most people rely on [Tycho](https://eclipse.org/tycho/), which is an OSGi/P2 adapter plug-in for Maven builds. Tycho obtains much information from the OSGi bundle's manifest. Additionally needed information is configured through the pom.xml file which sits at the root of each project.
 
 ### The parent project (my.mavenized.herolanguage.parent)
 
@@ -343,7 +343,7 @@ The following is an example target platform definition for Xtext 2.31.0 and Ecli
 <locations>
   <location includeAllPlatforms="false" includeConfigurePhase="false" includeMode="planner" includeSource="false" type="InstallableUnit">
     <unit id="org.eclipse.xtext.sdk.feature.group" version="0.0.0"/>
-    <repository location="http://download.eclipse.org/modeling/tmf/xtext/updates/releases/2.31.0/"/>
+    <repository location="https://download.eclipse.org/modeling/tmf/xtext/updates/releases/2.31.0/"/>
   </location>
   <location includeAllPlatforms="false" includeConfigurePhase="false" includeMode="planner" includeSource="false" type="InstallableUnit">
     <unit id="org.eclipse.jdt.feature.group" version="0.0.0"/>
@@ -352,7 +352,7 @@ The following is an example target platform definition for Xtext 2.31.0 and Ecli
     <unit id="org.eclipse.draw2d.feature.group" version="0.0.0"/>
     <unit id="org.eclipse.emf.sdk.feature.group" version="0.0.0"/>
     <unit id="org.eclipse.emf.mwe2.launcher.feature.group" version="0.0.0"/>
-    <repository location="http://download.eclipse.org/releases/2023-06/"/>
+    <repository location="https://download.eclipse.org/releases/2023-06/"/>
   </location>
 </locations>
 </target>

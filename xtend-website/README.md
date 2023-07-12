@@ -1,7 +1,7 @@
 How to Test the Website
 =======================
 
-The website is generated with [Jekyll](http://jekyllrb.com).
+The website is generated with [Jekyll](https://jekyllrb.com).
 ```
 gem install bundler jekyll jekyll-markdown-block
 ```

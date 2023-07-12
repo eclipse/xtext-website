@@ -155,7 +155,7 @@ val List<Integer> myList = myArray
 
 A type cast behaves exactly like casts in Java, but has a slightly more readable syntax. Type casts bind stronger than any other operator but weaker than feature calls.
 
-The conformance rules for casts are defined in the [Java Language Specification](http://docs.oracle.com/javase/specs/jls/se6/html/conversions.html#5.5). Here are some examples: 
+The conformance rules for casts are defined in the [Java Language Specification](https://docs.oracle.com/javase/specs/jls/se6/html/conversions.html#5.5). Here are some examples: 
 
 ```xtend
 something as MyClass
@@ -689,7 +689,7 @@ Checked exceptions that are thrown in the body of a lambda expression but not de
 
 ## Anonymous Classes {#anonymous-classes}
 
-An anonymous class in Xtend has the very same semantics as in Java (see [Java Language Specification](http://docs.oracle.com/javase/specs/jls/se7/html/jls-15.html#jls-15.9.5)). Here's an example:
+An anonymous class in Xtend has the very same semantics as in Java (see [Java Language Specification](https://docs.oracle.com/javase/specs/jls/se7/html/jls-15.html#jls-15.9.5)). Here's an example:
 
 ```xtend
 val tabListener = new ActionBar.TabListener() {
@@ -963,7 +963,7 @@ Like in Java you can use the try-with-resources expression to automatically clos
 
 ## Synchronized {#xtend-expressions-synchronized}
 
-The synchonized expression does the same as it does in Java (see [Java Language Specification](http://docs.oracle.com/javase/specs/jls/se7/html/jls-14.html#jls-14.19)). The only difference is that in Xtend it is an expression and can therefore be used at more places.
+The synchonized expression does the same as it does in Java (see [Java Language Specification](https://docs.oracle.com/javase/specs/jls/se7/html/jls-14.html#jls-14.19)). The only difference is that in Xtend it is an expression and can therefore be used at more places.
 
 ```xtend
 synchronized(lock) {
