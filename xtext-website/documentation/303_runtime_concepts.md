@@ -437,7 +437,7 @@ classpathScope{stuff from bin/}
 -> NULLSCOPE{}
 ```
 
-Please find the motivation behind this and some additional details in [this blog post](https://blog.efftinge.de/2009/01/xtext-scopes-and-emf-index.html).
+Please find the motivation behind this and some additional details in [this blog post](http://blog.efftinge.de/2009/01/xtext-scopes-and-emf-index.html).
 
 ### Imported Namespace Aware Scoping {#namespace-imports}
 
