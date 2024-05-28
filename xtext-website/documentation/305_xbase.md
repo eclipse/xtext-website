@@ -227,6 +227,20 @@ The Xbase framework will automatically switch between the JVM element or the DSL
 
 By default, the inferred model is [indexed](303_runtime_concepts.html#global-scopes), so it can be cross referenced from other models.
 
+### Validation
+
+Besides your custom validations, you can use [JvmGenericTypeValidator]({{site.src.xtext}}/org.eclipse.xtext.xbase/src/org/eclipse/xtext/xbase/validation/JvmGenericTypeValidator.java), introduced in version 2.35.0. This automatically perform several Java-related checks in the hierarchy of the inferred [JvmGenericType]({{site.src.xtext}}/org.eclipse.xtext.common.types/emf-gen/org/eclipse/xtext/common/types/JvmGenericType.java)s of an Xbase language, with the corresponding error reporting.
+For example, cycles in a hierarchy, extension of a final class, proper extension of an abstract class (do you implement all the abstract methods or declare the inferred class as abstract?), proper method overriding, etc. It also performs duplicate elements checks, like duplicate parameter names, duplicate fields and duplicate methods (keeping the type-erasure into consideration when using types with arguments).
+
+This mechanism assumes that you implement the [IJvmModelInferrer]({{site.src.xtext}}/org.eclipse.xtext.xbase/src/org/eclipse/xtext/xbase/jvmmodel/IJvmModelInferrer.java) "correctly".
+It only checks the first inferred `JvmGenericType` for the same DSL element (i.e., if for an element `Entity` you infer two `JvmGenericType`s, `t1` and `t2`, only the first one will be checked).
+Moreover, it only checks Jvm model elements with an associated source element.
+Concerning intended classes to extend and interfaces to extend/implement, it assumes the model inferrer uses the [JvmTypesBuilder]({{site.src.xtext}}/org.eclipse.xtext.xbase/src/org/eclipse/xtext/xbase/jvmmodel/JvmTypesBuilder.java) methods `setSuperClass(JvmDeclaredType, JvmTypeReference)` and `addSuperInterface(JvmDeclaredType, JvmTypeReference)`, respectively.
+
+Currently, this validator must be enabled explicitly through the `composedCheck` in the MWE2 file or the `@ComposedChecks` annotation in the validator, e.g., `@ComposedChecks(validators = JvmGenericTypeValidator.class)`.
+
+The Domainmodel example uses this validator.
+
 ## Using Xbase Expressions {#xbase-expressions}
 
 Xbase is an expression language that can be embedded into Xtext languages. Its syntax is close to Java, but it additionally offers type inference, lambda expressions, a powerful switch expression and a lot more. For details on this expression language, please consult the [reference documentation](#xbase-language-ref-introduction) and the Xbase tutorial *(File &rarr; New &rarr; Example &rarr; Xtext Examples &rarr; Xbase Tutorial)*.
