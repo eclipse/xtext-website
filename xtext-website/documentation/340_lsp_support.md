@@ -72,7 +72,10 @@ Xtext supports the generation of language servers that comply to the [Language S
 	"uuid": "8383e49a-fa0d-4bb5-827b-10e8abb294ca"
 }
 ```
- 1. Open a `*.dmodel` file with the Generic Editor and explore the supported language features like syntax highlighting, content assist, validation, displaying code lenses, quickfixes, formatting, ... :
+You may save the content in a file and then add it to the TextMate grammar in Preferences.
+![Domainmodel Language Server Launcher](images/LSP_04B_AddTextMateGrammarFile.png)
+
+1. Open a `*.dmodel` file with the Generic Editor and explore the supported language features like syntax highlighting, content assist, validation, displaying code lenses, quickfixes, formatting, ... :
 ![Domainmodel Language Features](images/LSP_05_DomainmodelLanguageFeatures.png)
 
 ## Getting Started in IntelliJ IDEA {#getting-started-intellij}
