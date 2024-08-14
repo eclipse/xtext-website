@@ -567,10 +567,10 @@ When navigating a hyperlink, Xtext will also select the text region correspondin
 
 The location service offers different methods to obtain the region of interest for special use cases. You can either obtain the complete region for an object or only the identifying string which is usually the name of the instance (see `getSignificantTextRegion(EObject)`). You can also query for the text region of a specific [EStructuralFeature]({{site.src.emf}}/plugins/org.eclipse.emf.ecore/src/org/eclipse/emf/ecore/EStructuralFeature.java) by means of `getFullTextRegion(EObject, EStructuralFeature, int)`.
 
-As the default strategy is a best effort it may not always result in the selection you want. If that's the case you can [override](302_configuration.html#guicemodules) the [ILocationInFileProvider]({{site.src.xtext}}/org.eclipse.xtext/src/org/eclipse/xtext/resource/ILocationInFileProvider.java) binding in the UI module as in the following example:
+As the default strategy is a best effort it may not always result in the selection you want. If that's the case you can [override](302_configuration.html#guicemodules) the [ILocationInFileProvider]({{site.src.xtext}}/org.eclipse.xtext/src/org/eclipse/xtext/resource/ILocationInFileProvider.java) binding in the runtime module as in the following example:
 
 ```java
-public class MyDslUiModule extends AbstractMyDslUiModule {
+public class MyDslRuntimeModule extends AbstractMyDslRuntimeModule {
   @Override
   public Class<? extends ILocationInFileProvider> 
       bindILocationInFileProvider() {
