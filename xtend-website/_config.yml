@@ -36,7 +36,7 @@ kramdown:
     coderay_css:               style
 
 src:
-  xtext: "https://github.com/eclipse/xtext/tree/main"
+  xtext: "https://github.com/eclipse-xtext/xtext/tree/main"
 
 javadoc:
   java: "https://docs.oracle.com/javase/11/docs/api"
