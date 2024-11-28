@@ -47,7 +47,7 @@ spec:
           sshagent(['github-bot-ssh']) { // 
             sh '''
               rm -rf deploy-xtext-git-repo
-              git clone -b master git@github.com:eclipse/xtext-website-publish.git deploy-xtext-git-repo
+              git clone -b master git@github.com:eclipse-xtext/xtext-website-publish.git deploy-xtext-git-repo
             '''
           }
           // sshagent(['git.eclipse.org-bot-ssh']) { // 
@@ -85,7 +85,7 @@ spec:
             git config user.email "xtext-bot@eclipse.org"
             cp -r $WORKSPACE/git-repo/xtext-website/_site/* .
             git diff
-            git add --all :/ && git commit -m "Generated from commit: https://github.com/eclipse/xtext/commit/$GIT_COMMIT"
+            git add --all :/ && git commit -m "Generated from commit: https://github.com/eclipse-xtext/xtext-website/commit/$GIT_COMMIT"
             git status
           '''
         }
