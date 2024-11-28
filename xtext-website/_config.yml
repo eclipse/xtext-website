@@ -36,7 +36,7 @@ kramdown:
     coderay_css:               style
 
 src:
-  xtext: "https://github.com/eclipse/xtext/blob/main"
+  xtext: "https://github.com/eclipse-xtext/xtext/blob/main"
   mwe: "https://github.com/eclipse/mwe/blob/v2.12.1"
   emf: "https://git.eclipse.org/r/plugins/gitiles/emf/org.eclipse.emf/+/refs/tags/R2_20_0"
 
